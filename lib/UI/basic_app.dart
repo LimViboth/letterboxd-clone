@@ -34,13 +34,12 @@ class BasicApp extends StatelessWidget {
     Color col1 = Colors.black;
     return ThemeData(
       brightness: Brightness.light,
+      scaffoldBackgroundColor: Color(0xFF0A192F),
       textTheme: TextTheme(bodyMedium: TextStyle(fontSize: _size)),
       appBarTheme: AppBarTheme(
         centerTitle: true,
         backgroundColor: col1,
         foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-        ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: col1,
@@ -54,6 +53,7 @@ class BasicApp extends StatelessWidget {
     Color col1 = Colors.pink;
     return ThemeData(
       brightness: Brightness.dark,
+      scaffoldBackgroundColor: Colors.blue.shade900, // dark blue background
       textTheme: TextTheme(bodyMedium: TextStyle(fontSize: _size)),
       appBarTheme: AppBarTheme(
         centerTitle: true,
