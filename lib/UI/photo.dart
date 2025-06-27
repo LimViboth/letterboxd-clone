@@ -1,3 +1,20 @@
 List<String> movieList = [
-  "https://theartsshelf.com/wp-content/uploads/2025/05/28-Years-Later-New-Poster.jpg"
+  "https://theartsshelf.com/wp-content/uploads/2025/05/28-Years-Later-New-Poster.jpg",
+  "https://musicart.xboxlive.com/7/08f86d00-0000-0000-0000-000000000002/504/image.jpg",
+  "https://m.media-amazon.com/images/M/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_.jpg",
+  "https://www.santacruzcinema.com/wp-content/uploads/sites/2/2024/12/HO00001840.jpeg?w=1008",
+  "https://m.media-amazon.com/images/M/MV5BMTUxMjc2MTcxNV5BMl5BanBnXkFtZTcwMzgzOTY0MQ@@._V1_.jpg",
+  "https://m.media-amazon.com/images/M/MV5BNmQxMTI1YmEtOGY3Yi00NzVlLWEzMjAtYTI1NWZkNDFiMDg1XkEyXkFqcGc@._V1_.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/a/ab/Final_Destination_Bloodlines_%282025%29_poster.jpg",
+  "https://m.media-amazon.com/images/M/MV5BMGQ1MTBjODItNzMzZi00MmM3LWI3ZjMtN2E3Y2JhMzM0NTI5XkEyXkFqcGc@._V1_.jpg",
+  "https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_.jpg",
+  "https://lumiere-a.akamaihd.net/v1/images/p_studio_elio_payoff_poster_v1_b71992a8.jpeg?region=0%2C0%2C540%2C810",
+  "https://www.watervillecreates.org/wp-content/uploads/2025/05/the-phoenician-scheme-poster-800x1200.webp",
+  "https://m.media-amazon.com/images/M/MV5BYzFjMzNjOTktNDBlNy00YWZhLWExYTctZDcxNDA4OWVhOTJjXkEyXkFqcGc@._V1_.jpg",
+  "https://m.media-amazon.com/images/M/MV5BMzM4OWFjMTMtZjNjOS00YmU3LTlhY2MtNjFiMTVkN2Y1OTZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "https://m.media-amazon.com/images/M/MV5BNmZjOTU5MGQtYTcyMi00ZGJjLTk4NzQtZTcwMmI0MTczNTUwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "https://m.media-amazon.com/images/M/MV5BNzdhZmY2OTQtYWI4OC00ZThkLTlhZjAtNzE2YzRjM2Q5YjJlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "https://static.wikia.nocookie.net/warner-bros-entertainment/images/9/9b/Mickey_17_poster.jpg/revision/latest?cb=20241010021449",
+  "https://resizing.flixster.com/bCW4pupnvma7yONsT_2GJyFytvU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVlM2I1ZDlkLTE5MjAtNDA3YS1hY2U2LTVjMjY0OTBmNDc4Zi5qcGc=",
+  "https://m.media-amazon.com/images/M/MV5BMjA5NDQyMjc2NF5BMl5BanBnXkFtZTcwMjg5ODcyMw@@._V1_.jpg",
 ];
