@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:letterboxd/UI/home_screen.dart';
+import 'package:letterboxd/UI/main_screen.dart';
 import 'package:provider/provider.dart';
 import 'font_logic.dart';
 import 'theme_logic.dart';
@@ -23,7 +24,7 @@ class BasicApp extends StatelessWidget {
         mode = ThemeMode.system;
     }
     return MaterialApp(
-      home: HomeScreen(),
+      home: MainScreen(),
       themeMode: mode,
       theme: _lightTheme(),
       darkTheme: _darkTheme(),
@@ -53,7 +54,7 @@ class BasicApp extends StatelessWidget {
     Color col1 = Colors.pink;
     return ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: Colors.blue.shade900, // dark blue background
+      scaffoldBackgroundColor: Colors.blue.shade900,
       textTheme: TextTheme(bodyMedium: TextStyle(fontSize: _size)),
       appBarTheme: AppBarTheme(
         centerTitle: true,
