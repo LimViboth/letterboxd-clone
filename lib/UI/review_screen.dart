@@ -15,6 +15,17 @@ class _ReviewScreenState extends State<ReviewScreen> {
     );
   }
   Widget _buildBody(){
-    return Center(child: Text("Reviews", style: TextStyle(color: Colors.white)));
+    return Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const ListTile(
+            leading: Icon(Icons.album),
+            title: Text('The Enchanted Nightingale'),
+            subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+          ),
+    ]
+    )
+    );
   }
 }
