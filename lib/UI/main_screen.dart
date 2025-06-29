@@ -22,7 +22,7 @@ class MainScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       elevation: 0,
       centerTitle: true,
-      title: const Text(
+      title: Text(
         "Letterboxd",
         style: TextStyle(
           fontSize: 24,
@@ -31,27 +31,26 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(50),
+        preferredSize: Size.fromHeight(50),
         child: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+          padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.grey[900],
-              borderRadius: BorderRadius.circular(30),
+              color: Colors.grey.shade900,
+              borderRadius: BorderRadius.circular(15),
             ),
             child: TabBar(
+              indicatorColor: Colors.transparent,
               indicator: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(30)),
               ),
               indicatorSize: TabBarIndicatorSize.label,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.grey.shade400,
               labelStyle: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
-                letterSpacing: 0.5,
               ),
               tabs: [
                 Tab(text: "Films"),

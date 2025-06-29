@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'photo.dart';
+import '../logic/photo.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.fromLTRB(10, 15, 10, 3),
           child: Text(
             "Popular this week",
@@ -35,10 +35,7 @@ class HomeScreen extends StatelessWidget {
               final item = movieList[index];
               return ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  item,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.network(item, fit: BoxFit.cover),
               );
             },
           ),
