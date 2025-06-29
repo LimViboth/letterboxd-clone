@@ -109,15 +109,19 @@ class _ReviewScreenState extends State<ReviewScreen> {
     List<Widget> stars = [];
     int fullStars = rating.floor();
     bool hasHalf = (rating - fullStars) >= 0.5;
+
     for (int i = 0; i < fullStars; i++) {
-      stars.add(Icon(Icons.star, color: Colors.green.shade500, size: 18));
+      stars.add(Icon(Icons.star, color: Colors.green, size: 18));
     }
+
     if (hasHalf) {
-      stars.add(Icon(Icons.star_half, color: Colors.green.shade500, size: 18));
+      stars.add(Text("½", style: TextStyle(color: Colors.green, fontSize: 16)));
     }
-    while (stars.length < 5) {
-      stars.add(Icon(Icons.star_border, color: Colors.green.shade500, size: 18));
-    }
-    return Row(children: stars);
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: stars,
+    );
   }
+
 }
