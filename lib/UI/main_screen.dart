@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:letterboxd/UI/journal_screen.dart';
+import 'package:letterboxd/UI/list_screen.dart';
 import 'home_screen.dart';
 import 'review_screen.dart';
 
@@ -27,7 +29,6 @@ class MainScreen extends StatelessWidget {
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
         ),
       ),
       bottom: PreferredSize(
@@ -70,8 +71,8 @@ class MainScreen extends StatelessWidget {
       children: [
         HomeScreen(),
         ReviewScreen(),
-        Center(child: Text("Lists", style: TextStyle(color: Colors.white))),
-        Center(child: Text("Journal", style: TextStyle(color: Colors.white))),
+        ListScreen(),
+        JournalScreen(),
       ],
     );
   }
