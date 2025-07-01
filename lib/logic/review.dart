@@ -15,16 +15,6 @@ class Review {
     required this.text,
   });
 
-  factory Review.fromMap(Map<String, dynamic> map) {
-    return Review(
-      title: map['title'],
-      poster: map['poster'],
-      reviewer: map['reviewer'],
-      avatar: map['avatar'],
-      rating: (map['rating'] as num).toDouble(),
-      text: map['text'],
-    );
-  }
 }
 
 
