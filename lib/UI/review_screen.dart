@@ -12,7 +12,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF181B20),
+
       body: _buildBody(),
     );
   }
@@ -26,7 +27,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
           child: Card(
-            color: Colors.black,
+            color:Color(0xFF181B20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),

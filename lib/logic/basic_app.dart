@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:letterboxd/UI/home_screen.dart';
 import 'package:letterboxd/UI/main_screen.dart';
 import 'package:provider/provider.dart';
 import 'font_logic.dart';
@@ -32,10 +31,10 @@ class BasicApp extends StatelessWidget {
   }
 
   ThemeData _lightTheme() {
-    Color col1 = Colors.black;
+    Color col1 = Color(0xFF181B20);
     return ThemeData(
       brightness: Brightness.light,
-      scaffoldBackgroundColor: Color(0xFF0A192F),
+      scaffoldBackgroundColor: Color(0xFF181B20),
       textTheme: TextTheme(bodyMedium: TextStyle(fontSize: _size)),
       appBarTheme: AppBarTheme(
         centerTitle: true,
