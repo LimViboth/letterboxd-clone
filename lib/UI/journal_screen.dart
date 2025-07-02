@@ -11,7 +11,7 @@ class _JournalScreenState extends State<JournalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF181B20),
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
@@ -59,7 +59,7 @@ class _JournalScreenState extends State<JournalScreen> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        color: Colors.grey.shade900,
+        color: Color(0xFF181B20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -76,7 +76,7 @@ class _JournalScreenState extends State<JournalScreen> {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

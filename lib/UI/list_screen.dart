@@ -11,7 +11,7 @@ class _ListScreenState extends State<ListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF181B20),
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [

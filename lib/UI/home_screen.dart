@@ -6,15 +6,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(10, 15, 10, 3),
+          padding: const EdgeInsets.fromLTRB(10, 15, 10, 3),
           child: Text(
             "Popular this week",
             style: TextStyle(
-              color: Colors.white,
+              color: theme.textTheme.bodyMedium?.color ?? Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
