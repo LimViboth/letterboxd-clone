@@ -6,54 +6,77 @@ class SearchScreen extends StatefulWidget {
   @override
   State<SearchScreen> createState() => _SearchScreenState();
 }
-
 class _SearchScreenState extends State<SearchScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF181B20),
-      appBar: _buildAppBar(),
-      body: Container(), // Optional placeholder
-    );
-  }
+    final browseByItems = [
+      'Release date',
+      'Genre, country or language',
+      'Service',
+      'Most popular',
+      'Highest rated',
+      'Most anticipated',
+      'Top 250 narrative features',
+      'Featured lists',
+    ];
 
-  PreferredSizeWidget _buildAppBar() {
-    return AppBar(
+    final letterboxdItems = [
+      'Journal',
+      'Podcast',
+      'Showdown',
+      'Year in Review',
+      'About',
+    ];
+    return Scaffold(
       backgroundColor: Colors.black,
-      elevation: 0,
-      toolbarHeight: 100,
-      title: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      appBar: AppBar(
+        title: const Text('Search'),
+        backgroundColor: Colors.black,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         children: [
-          Text(
-            "Search",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(height: 8),
-          Container(
-            height: 40,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade900,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: TextField(
-              style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: 'Search...',
-                hintStyle: TextStyle(color: Colors.grey.shade500),
-                border: InputBorder.none,
-                icon: Icon(Icons.search, color: Colors.grey.shade500),
+          const SizedBox(height: 16),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Find films, cast + crew, members, reviews...',
+              filled: true,
+              fillColor: Colors.grey[900],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide.none,
               ),
+              prefixIcon: const Icon(Icons.search, color: Colors.white54),
+              hintStyle: const TextStyle(color: Colors.white54),
             ),
+            style: const TextStyle(color: Colors.white),
           ),
+          const SizedBox(height: 24),
+          const Text(
+            'Browse by',
+            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          ...browseByItems.map((item) => ListTile(
+                title: Text(item, style: const TextStyle(color: Colors.white)),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.white70),
+                onTap: () {}, // Add navigation logic here
+              )),
+          const SizedBox(height: 24),
+          const Text(
+            'Letterboxd.com',
+            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          ...letterboxdItems.map((item) => ListTile(
+                title: Text(item, style: const TextStyle(color: Colors.white)),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.white70),
+                onTap: () {}, // Add navigation logic here
+              )),
+          const SizedBox(height: 16),
         ],
       ),
-      centerTitle: true,
     );
   }
+
+  
 }
