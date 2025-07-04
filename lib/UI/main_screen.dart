@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:letterboxd/UI/add_screen.dart';
 import 'package:letterboxd/UI/home_screen.dart';
 import 'package:letterboxd/UI/review_screen.dart';
 import 'package:letterboxd/UI/list_screen.dart';
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     _TabScreen(),
     SearchScreen(),
-    Center(child: Text("Add New", style: TextStyle(color: Colors.white))),
+    AddScreen(),
     Center(child: Text("Activity", style: TextStyle(color: Colors.white))),
     Center(child: Text("User Profile", style: TextStyle(color: Colors.white))),
   ];
@@ -46,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: 'Add'),
+          BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: 'Add '),
           BottomNavigationBarItem(icon: Icon(Icons.flash_on), label: 'Activity'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
         ],
