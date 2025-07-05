@@ -12,28 +12,25 @@ class _ReviewScreenState extends State<ReviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF181B20),
-
       body: _buildBody(),
     );
   }
 
   Widget _buildBody() {
     return ListView.builder(
-      physics: const BouncingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       itemCount: reviews.length,
       itemBuilder: (context, index) {
         final review = reviews[index];
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+          padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
           child: Card(
-            color:Color(0xFF181B20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
             elevation: 0,
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,7 +43,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,8 +54,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                             Expanded(
                               child: Text(
                                 '${review.title} 2025',
-                                style: const TextStyle(
-                                  color: Colors.white,
+                                style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
                                 ),
@@ -69,12 +65,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
                               children: [
                                 Text(
                                   review.reviewer,
-                                  style: TextStyle(
-                                    color: Colors.grey.shade400,
-                                    fontSize: 13,
-                                  ),
                                 ),
-                                const SizedBox(width: 6),
+                                SizedBox(width: 6),
                                 CircleAvatar(
                                   radius: 12,
                                   backgroundImage: NetworkImage(review.avatar),
@@ -83,12 +75,11 @@ class _ReviewScreenState extends State<ReviewScreen> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 4),
+                        SizedBox(height: 4),
                         _buildStarRating(review.rating),
-                        const SizedBox(height: 8),
+                        SizedBox(height: 8),
                         Text(
                           review.text,
-                          style: const TextStyle(color: Colors.white70, fontSize: 14),
                           maxLines: 5,
                           overflow: TextOverflow.ellipsis,
                         ),

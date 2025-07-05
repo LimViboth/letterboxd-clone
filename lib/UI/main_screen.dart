@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:letterboxd/UI/activity_screen.dart';
 import 'package:letterboxd/UI/add_screen.dart';
 import 'package:letterboxd/UI/home_screen.dart';
 import 'package:letterboxd/UI/review_screen.dart';
 import 'package:letterboxd/UI/list_screen.dart';
 import 'package:letterboxd/UI/journal_screen.dart';
 import 'package:letterboxd/UI/search_screen.dart';
+import 'package:letterboxd/UI/user_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -20,8 +22,8 @@ class _MainScreenState extends State<MainScreen> {
     _TabScreen(),
     SearchScreen(),
     AddScreen(),
-    Center(child: Text("Activity", style: TextStyle(color: Colors.white))),
-    Center(child: Text("User Profile", style: TextStyle(color: Colors.white))),
+    ActivityScreen(),
+    UserScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -32,22 +34,24 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final bottomTheme = theme.bottomNavigationBarTheme;
+
     return Scaffold(
-      backgroundColor: const Color(0xFF181B20),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        backgroundColor: const Color(0xFF181B20),
+        selectedItemColor: bottomTheme.selectedItemColor,
+        unselectedItemColor: bottomTheme.unselectedItemColor,
+        backgroundColor: bottomTheme.backgroundColor,
         showUnselectedLabels: false,
         showSelectedLabels: false,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: 'Add '),
+          BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: 'Add'),
           BottomNavigationBarItem(icon: Icon(Icons.flash_on), label: 'Activity'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
         ],
@@ -61,43 +65,38 @@ class _TabScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tabBarTheme = theme.tabBarTheme;
+
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: const Color(0xFF181B20),
         appBar: AppBar(
-          backgroundColor: Colors.black,
-          elevation: 0,
-          centerTitle: true,
-          title: const Text(
+          title: Text(
             "Letterboxd",
-            style: TextStyle(
-              fontSize: 24,
+            style: theme.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
+          centerTitle: true,
           bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(50),
+            preferredSize: Size.fromHeight(50),
             child: Container(
               alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+              padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade900,
+                  color: theme.cardColor.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const TabBar(
-                  indicatorColor: Colors.transparent,
-                  indicator: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
+                child: TabBar(
                   indicatorSize: TabBarIndicatorSize.label,
-                  labelColor: Colors.white,
-                  unselectedLabelColor: Colors.grey,
-                  labelStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                  unselectedLabelColor:
+                  tabBarTheme.unselectedLabelColor ?? theme.hintColor,
+                  labelStyle: tabBarTheme.labelStyle ??
+                      theme.textTheme.labelLarge?.copyWith(fontWeight: FontWeight.bold),
+                  unselectedLabelStyle:
+                  tabBarTheme.unselectedLabelStyle ?? theme.textTheme.labelLarge,
                   tabs: [
                     Tab(text: "Films"),
                     Tab(text: "Reviews"),
@@ -109,7 +108,7 @@ class _TabScreen extends StatelessWidget {
             ),
           ),
         ),
-        body:TabBarView(
+        body: TabBarView(
           physics: BouncingScrollPhysics(),
           children: [
             HomeScreen(),

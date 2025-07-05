@@ -11,7 +11,6 @@ class _ListScreenState extends State<ListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF181B20),
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
@@ -83,7 +82,7 @@ class _ListScreenState extends State<ListScreen> {
       children: [
         Text(
           header,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 8),
         Row(
@@ -92,14 +91,14 @@ class _ListScreenState extends State<ListScreen> {
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(fontSize: 14, color: Colors.white),
+                style: TextStyle(fontSize: 14),
               ),
             ),
             Row(
               children: [
                 Text(
                   username,
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+                  style: TextStyle(fontSize: 12),
                 ),
                 SizedBox(width: 8),
                 CircleAvatar(
@@ -128,7 +127,7 @@ class _ListScreenState extends State<ListScreen> {
         SizedBox(height: 8),
         Text(
           description,
-          style: TextStyle(color: Colors.grey.shade400, fontSize: 12),
+          style: TextStyle(fontSize: 12),
         ),
       ],
     );

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:letterboxd/UI/main_screen.dart';
 import 'package:provider/provider.dart';
-import 'font_logic.dart';
+import '../UI/main_screen.dart';
 import 'theme_logic.dart';
+import 'font_logic.dart';
 
 class BasicApp extends StatelessWidget {
-  double _size = 0;
+  // const BasicApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    _size = context.watch<FontLogic>().size;
+    final themeIndex = context.watch<ThemeLogic>().themeIndex;
+    final fontSize = context.watch<FontLogic>().size;
 
-    int themeIndex = context.watch<ThemeLogic>().themeIndex;
-    ThemeMode mode = ThemeMode.system;
+    ThemeMode mode;
     switch (themeIndex) {
       case 1:
         mode = ThemeMode.dark;
@@ -22,43 +23,48 @@ class BasicApp extends StatelessWidget {
       default:
         mode = ThemeMode.system;
     }
-    return MaterialApp(
-      home: MainScreen(),
-      themeMode: mode,
-      theme: _lightTheme(),
-      darkTheme: _darkTheme(),
+
+    return Builder(
+      builder: (context) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: MainScreen(),
+          themeMode: mode,
+          theme: _lightTheme(fontSize),
+          darkTheme: _darkTheme(fontSize),
+        );
+      },
     );
   }
 
-  ThemeData _lightTheme() {
-    Color col1 = Color(0xFF181B20);
+  ThemeData _lightTheme(double fontSize) {
     return ThemeData(
       brightness: Brightness.light,
-      scaffoldBackgroundColor: Color(0xFF181B20),
-      textTheme: TextTheme(bodyMedium: TextStyle(fontSize: _size)),
+      scaffoldBackgroundColor: Colors.white,
+      textTheme: TextTheme(bodyMedium: TextStyle(fontSize: fontSize, color: Colors.black)),
       appBarTheme: AppBarTheme(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
         centerTitle: true,
-        backgroundColor: col1,
-        foregroundColor: Colors.white,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: col1,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.white,
       ),
       drawerTheme: DrawerThemeData(backgroundColor: Colors.white),
     );
   }
 
-  ThemeData _darkTheme() {
-    Color col1 = Colors.pink;
+  ThemeData _darkTheme(double fontSize) {
     return ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: Colors.blue.shade900,
-      textTheme: TextTheme(bodyMedium: TextStyle(fontSize: _size)),
+      scaffoldBackgroundColor: Color(0xFF181B20),
+      textTheme: TextTheme(bodyMedium: TextStyle(fontSize: fontSize, color: Colors.white)),
       appBarTheme: AppBarTheme(
-        centerTitle: true,
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: Colors.black,
         foregroundColor: Colors.white,
+        centerTitle: true,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
@@ -67,13 +73,13 @@ class BasicApp extends StatelessWidget {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: col1,
+        selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.black,
       ),
       drawerTheme: DrawerThemeData(backgroundColor: Colors.black),
       listTileTheme: ListTileThemeData(
         textColor: Colors.white,
-        iconColor: col1,
       ),
     );
   }

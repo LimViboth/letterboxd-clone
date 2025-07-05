@@ -12,21 +12,20 @@ class HomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(10, 15, 10, 3),
+          padding: EdgeInsets.fromLTRB(10, 15, 10, 3),
           child: Text(
             "Popular this week",
-            style: TextStyle(
-              color: theme.textTheme.bodyMedium?.color ?? Colors.black,
-              fontSize: 20,
+            style: theme.textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.bold,
+              color: theme.textTheme.bodyMedium?.color,
             ),
           ),
         ),
         Expanded(
           child: GridView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-            physics: const BouncingScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+            physics: BouncingScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               mainAxisSpacing: 6,
               crossAxisSpacing: 6,
