@@ -27,10 +27,8 @@ class _SearchScreenState extends State<SearchScreen> {
       'About',
     ];
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('Search'),
-        backgroundColor: Colors.black,
+        title: Text('Search'),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -40,39 +38,37 @@ class _SearchScreenState extends State<SearchScreen> {
             decoration: InputDecoration(
               hintText: 'Find films, cast + crew, members, reviews...',
               filled: true,
-              fillColor: Colors.grey[900],
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide.none,
               ),
-              prefixIcon: const Icon(Icons.search, color: Colors.white54),
-              hintStyle: const TextStyle(color: Colors.white54),
+              prefixIcon: Icon(Icons.search),
             ),
             style: const TextStyle(color: Colors.white),
           ),
-          const SizedBox(height: 24),
-          const Text(
+          SizedBox(height: 24),
+          Text(
             'Browse by',
-            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           ...browseByItems.map((item) => ListTile(
-                title: Text(item, style: const TextStyle(color: Colors.white)),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.white70),
+                title: Text(item),
+                trailing: Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {}, // Add navigation logic here
               )),
-          const SizedBox(height: 24),
-          const Text(
+          SizedBox(height: 24),
+          Text(
             'Letterboxd.com',
-            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           ...letterboxdItems.map((item) => ListTile(
-                title: Text(item, style: const TextStyle(color: Colors.white)),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.white70),
+                title: Text(item),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {}, // Add navigation logic here
               )),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
         ],
       ),
     );

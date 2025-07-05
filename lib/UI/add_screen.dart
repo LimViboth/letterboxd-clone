@@ -43,12 +43,11 @@ class _AddScreenState extends State<AddScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
       body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -56,7 +55,7 @@ class _AddScreenState extends State<AddScreen> {
                     onTap: () => Navigator.pop(context),
                     child: Text(
                       'Cancel',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ),
                   Text(
@@ -64,7 +63,7 @@ class _AddScreenState extends State<AddScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
-                        color: Colors.white),
+                    )
                   ),
                   CircleAvatar(
                     radius: 18,
@@ -74,16 +73,13 @@ class _AddScreenState extends State<AddScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: TextField(
                 onChanged: _filterFilms,
-                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   hintText: 'Name of film',
-                  hintStyle: TextStyle(color: Colors.white54),
-                  prefixIcon: Icon(Icons.search, color: Colors.white54),
+                  prefixIcon: Icon(Icons.search),
                   filled: true,
-                  fillColor: Colors.blueGrey[800],
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide.none,
@@ -100,10 +96,8 @@ class _AddScreenState extends State<AddScreen> {
                   return ListTile(
                     title: Text(
                       filteredFilms[index],
-                      style: TextStyle(color: Colors.white),
                     ),
                     onTap: () {
-                      print('Selected: ${filteredFilms[index]}');
                     },
                   );
                 },

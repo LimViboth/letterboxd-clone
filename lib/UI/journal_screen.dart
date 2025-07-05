@@ -11,13 +11,12 @@ class _JournalScreenState extends State<JournalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF181B20),
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
           _buildEntryCard(
             image:
-            "https://sm.ign.com/ign_ap/feature/e/every-majo/every-major-fast-and-furious-character-and-cast-member_bcam.jpg",
+            "https://cosmicbook.news/wp-content/uploads/2025/02/megan-2-0-trailer-poster.webp",
             title: "Fembots Forever",
             subtitle:
             "A starter pack of twenty female robots on film that show the future.",
@@ -33,18 +32,18 @@ class _JournalScreenState extends State<JournalScreen> {
           SizedBox(height: 16),
           _buildEntryCard(
             image:
-            "https://sm.ign.com/ign_ap/feature/e/every-majo/every-major-fast-and-furious-character-and-cast-member_bcam.jpg",
-            title: "Fast & Furious Franchise",
+            "https://www.lifewire.com/thmb/fmEVa8HLdfsO-GqEAxXLpqCMIiE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/httyd-27e5b3b8faf64cca9650554bf0261d91.jpg",
+            title: "How to train your dragon trilogy",
             subtitle:
-            "Yorgos Lanthimos speaks with us about Dogtooth for its fifteenth anniversary 4K re-release.",
+            "Ranking the trilogy from worst to best",
           ),
           SizedBox(height: 16),
           _buildEntryCard(
             image:
-            "https://sm.ign.com/ign_ap/feature/e/every-majo/every-major-fast-and-furious-character-and-cast-member_bcam.jpg",
-            title: "Fast & Furious Franchise",
+            "https://static.wikia.nocookie.net/lotr/images/8/87/Ringstrilogyposter.jpg/revision/latest?cb=20210720095933",
+            title: "Lord of the ring",
             subtitle:
-            "Yorgos Lanthimos speaks with us about Dogtooth for its fifteenth anniversary 4K re-release.",
+            "The lord of the ring trilogy is looking to coming back on the big screen once again",
           ),
         ],
       ),
@@ -59,7 +58,6 @@ class _JournalScreenState extends State<JournalScreen> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        color: Color(0xFF181B20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -77,7 +75,6 @@ class _JournalScreenState extends State<JournalScreen> {
                   Text(
                     title,
                     style: TextStyle(
-                      color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
