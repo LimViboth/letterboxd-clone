@@ -16,4 +16,4 @@ A clone of the popular movie tracking and review platform [Letterboxd](https://l
 
 - **Flutter** – Cross-platform mobile app development
 - **Dart** – Programming language used by Flutter
-- **Provider / Riverpod / Bloc** – (Select based on your app) State management
+- **Provider** – (Select based on your app) State management
