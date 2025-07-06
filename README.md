@@ -1,16 +1,27 @@
-# letterboxd
+# 🎬 Letterboxd Clone (Flutter)
 
-A new Flutter project.
+A clone of the popular movie tracking and review platform [Letterboxd](https://letterboxd.com/), built using Flutter. This app allows users to browse, search, review, and track movies, providing a sleek, cross-platform mobile experience.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- 🔍 Browse and search for movies
+- 🎞️ View movie details, ratings, and reviews
+- 📝 Write and manage your own reviews
+- ❤️ Create watchlists and favorites
+- 🧑 User profile and movie activity feed
+- 🌙 Dark mode support
+- 📱 Responsive UI for both Android and iOS
 
-A few resources to get you started if this is your first Flutter project:
+## 🧰 Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter** – Cross-platform mobile app development
+- **Dart** – Programming language used by Flutter
+- **Provider / Riverpod / Bloc** – (Select based on your app) State management
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📦 Installation
+
+1. **Clone the repo:**
+
+   ```bash
+   git clone https://github.com/your-username/letterboxd-clone.git
+   cd letterboxd-clone
